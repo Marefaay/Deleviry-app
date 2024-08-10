@@ -8,6 +8,7 @@ dbConnection;
 app.use(express.json());
 //routes
 app.use("/user", require("./APIs/userRoutes"));
+app.use("/admin", require("./APIs/adminRoutes"));
 app.get("/", (req, res) => res.send("Hello World!"));
 ///listen in port
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

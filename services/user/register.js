@@ -1,5 +1,7 @@
-const userModel = require("../../Database/modules/userModel");
+// const userModel = require("../../Database/modules/userModel");
 const bcrypt = require("bcrypt");
+
+const userModel = require("../../modules/userModel");
 const jwt = require("jsonwebtoken");
 const userRegister = async (request, response) => {
   try {
@@ -20,7 +22,7 @@ const userRegister = async (request, response) => {
           console.log(err);
         } else {
           ///add user
-          userModel.insertMany({
+          await userModel.insertMany({
             userName,
             email,
             password: hash,
@@ -39,7 +41,7 @@ const userRegister = async (request, response) => {
             },
             process.env.SECRET_KEY
           );
-            console.log(newUser);
+          console.log(newUser);
           return response.json({
             status: "Success",
             message: `Hello ${userName} Welcome To In Our App `,

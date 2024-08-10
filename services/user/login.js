@@ -1,6 +1,7 @@
-const userModel = require("../../Database/modules/userModel");
+// const userModel = require("../../Database/modules/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const userModel = require("../../modules/userModel");
 
 const login = async (request, response) => {
   const { email, password } = request.body;
