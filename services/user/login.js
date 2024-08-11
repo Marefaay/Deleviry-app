@@ -54,6 +54,11 @@ const login = async (request, response) => {
           token,
           newUser,
         });
+      } else {
+        return response.json({
+          status: "Error",
+          message: "Oops! ,Password Incorrect",
+        });
       }
     });
   } catch (err) {
