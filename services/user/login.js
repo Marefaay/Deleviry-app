@@ -64,7 +64,8 @@ const login = async (request, response) => {
   } catch (err) {
     return response.json({
       status: "Error",
-      message: "Error Occurred When Login",
+      message: "Oops!, Error Occurred When Login",
+      error: err.message,
     });
   }
 };

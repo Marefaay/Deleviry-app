@@ -54,7 +54,8 @@ const userRegister = async (request, response) => {
   } catch (err) {
     return response.json({
       status: "Error",
-      message: "Error Occur When Regstration",
+      message: "Oops!, Error Occur When Regstration",
+      error: err.message,
     });
   }
 };
