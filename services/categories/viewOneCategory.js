@@ -5,7 +5,10 @@ const viewOneCategory = async (request, response) => {
     const { categoryTitle } = request.body;
     //find Category
     const category = await categoryModel
-      .findOne({ categoryTitle })
+      .findOne(
+        { categoryTitle },
+        { _id: 0, __v: 0, createdAt: 0, updatedBy: 0 }
+      )
       .populate("addedBy", {
         _id: 0,
         password: 0,
